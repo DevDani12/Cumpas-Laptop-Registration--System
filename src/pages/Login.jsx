@@ -46,7 +46,7 @@ const Login = () => {
             <div className="bg-white shadow-xl rounded-xl p-8 w-full max-w-md">
                 <div className="flex flex-col items-center mb-6">
                     <div className="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mb-3 overflow-hidden">
-                        <img src="/images/college-logo.png" alt="Nefas Silk Polytechnic College" className="w-full h-full object-contain" />
+                        <img src="/images/images.jpg" alt="Nefas Silk Polytechnic College" className="w-full h-full object-contain" />
                     </div>
                     <h1 className="text-xl font-bold text-center text-slate-800">
                         Nefas Silk Polytechnic College
