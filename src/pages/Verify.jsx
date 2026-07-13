@@ -1,7 +1,32 @@
 import { useState } from "react";
 import { toast } from "react-hot-toast";
-import api from "../api/axios";
+import api, { API_BASE_URL } from "../api/axios";
 import { useLanguage } from "../context/LanguageContext";
+
+const getImageUrl = (path) => {
+  if (!path) return "";
+  if (path.startsWith("http://") || path.startsWith("https://")) return path;
+  return `${API_BASE_URL}${path}`;
+};
+
+const ImgWithFallback = ({ src, alt, className }) => {
+  const [failed, setFailed] = useState(false);
+  if (failed || !src) {
+    return (
+      <div className={`${className} flex items-center justify-center bg-slate-100 text-slate-400 text-xs`}>
+        {alt} not available
+      </div>
+    );
+  }
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className={className}
+      onError={() => setFailed(true)}
+    />
+  );
+};
 
 const Verify = () => {
   const { t } = useLanguage();
@@ -97,39 +122,30 @@ const Verify = () => {
               <hr className="my-4" />
               <h3 className="text-xl font-bold mb-3">Photos</h3>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {result.laptop.images?.studentIdPhoto && (
-                  <div>
-                    <p className="text-xs font-semibold text-slate-500 mb-1">{t("idPhoto")}</p>
-                    <img
-                      src={result.laptop.images.studentIdPhoto}
-                      alt="ID"
-                      className="w-full h-40 object-cover rounded-lg border border-slate-200"
-                      onError={(e) => { e.target.style.display = "none"; }}
-                    />
-                  </div>
-                )}
-                {result.laptop.images?.laptopPhoto && (
-                  <div>
-                    <p className="text-xs font-semibold text-slate-500 mb-1">{t("laptopPhoto")}</p>
-                    <img
-                      src={result.laptop.images.laptopPhoto}
-                      alt="Laptop"
-                      className="w-full h-40 object-cover rounded-lg border border-slate-200"
-                      onError={(e) => { e.target.style.display = "none"; }}
-                    />
-                  </div>
-                )}
-                {result.laptop.images?.serialStickerPhoto && (
-                  <div>
-                    <p className="text-xs font-semibold text-slate-500 mb-1">{t("serialStickerPhoto")}</p>
-                    <img
-                      src={result.laptop.images.serialStickerPhoto}
-                      alt="Serial Sticker"
-                      className="w-full h-40 object-cover rounded-lg border border-slate-200"
-                      onError={(e) => { e.target.style.display = "none"; }}
-                    />
-                  </div>
-                )}
+                <div>
+                  <p className="text-xs font-semibold text-slate-500 mb-1">{t("idPhoto")}</p>
+                  <ImgWithFallback
+                    src={getImageUrl(result.laptop.images?.studentIdPhoto)}
+                    alt="ID"
+                    className="w-full h-40 object-cover rounded-lg border border-slate-200"
+                  />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-slate-500 mb-1">{t("laptopPhoto")}</p>
+                  <ImgWithFallback
+                    src={getImageUrl(result.laptop.images?.laptopPhoto)}
+                    alt="Laptop"
+                    className="w-full h-40 object-cover rounded-lg border border-slate-200"
+                  />
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-slate-500 mb-1">{t("serialStickerPhoto")}</p>
+                  <ImgWithFallback
+                    src={getImageUrl(result.laptop.images?.serialStickerPhoto)}
+                    alt="Serial Sticker"
+                    className="w-full h-40 object-cover rounded-lg border border-slate-200"
+                  />
+                </div>
               </div>
             </div>
           )}
