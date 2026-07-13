@@ -75,13 +75,13 @@ const Verify = () => {
         <div className="flex gap-4 mb-4">
           <button
             onClick={() => { setSearchType("serialNumber"); setValue(""); }}
-            className={`px-4 py-2 rounded-lg ${searchType === "serialNumber" ? "bg-emerald-600 text-white" : "bg-gray-200"}`}
+            className={`px-4 py-2 rounded-lg ${searchType === "serialNumber" ? "bg-primary-600 text-white" : "bg-gray-200"}`}
           >
             {t("serialNumberLabel")}
           </button>
           <button
             onClick={() => { setSearchType("studentId"); setValue(""); }}
-            className={`px-4 py-2 rounded-lg ${searchType === "studentId" ? "bg-emerald-600 text-white" : "bg-gray-200"}`}
+            className={`px-4 py-2 rounded-lg ${searchType === "studentId" ? "bg-primary-600 text-white" : "bg-gray-200"}`}
           >
             {t("idName")}
           </button>
@@ -95,14 +95,14 @@ const Verify = () => {
             placeholder={searchType === "serialNumber" ? t("enterSerial") : t("enterOwnerId")}
             className="flex-1 border rounded-lg px-4 py-3 outline-none"
           />
-          <button onClick={verifyLaptop} disabled={loading} className="bg-emerald-600 text-white px-6 rounded-lg disabled:bg-gray-400">
+          <button onClick={verifyLaptop} disabled={loading} className="bg-primary-600 text-white px-6 rounded-lg disabled:bg-gray-400">
             {loading ? t("checking") : t("verify")}
           </button>
         </div>
       </div>
 
       {result && (
-        <div className={`rounded-xl p-6 text-white ${result.success ? "bg-emerald-600" : "bg-red-600"}`}>
+        <div className={`rounded-xl p-6 text-white ${result.success ? "bg-primary-600" : "bg-red-600"}`}>
           <h2 className="text-3xl font-bold mb-3">
             {result.success ? `✅ ${t("verified")}` : `❌ ${t("notRegistered")}`}
           </h2>
@@ -119,6 +119,26 @@ const Verify = () => {
               <p><b>{t("brandLabel")}:</b> {result.laptop.brand}</p>
               <p><b>{t("modelLabel")}:</b> {result.laptop.model}</p>
               <p><b>{t("serialLabel")}:</b> {result.laptop.serialNumber}</p>
+              <hr className="my-4" />
+              <h3 className="text-xl font-bold mb-3">QR Code</h3>
+              {result.laptop.qrCodeUrl ? (
+                <div className="flex items-center gap-4">
+                  <img src={result.laptop.qrCodeUrl} alt="QR Code" className="w-24 h-24 border rounded" />
+                  <button
+                    onClick={() => {
+                      const link = document.createElement("a");
+                      link.href = result.laptop.qrCodeUrl;
+                      link.download = `QR-${result.laptop.serialNumber}.png`;
+                      link.click();
+                    }}
+                    className="bg-primary-600 hover:bg-primary-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+                  >
+                    {t("downloadQR")}
+                  </button>
+                </div>
+              ) : (
+                <p className="text-sm text-slate-400">QR code not available</p>
+              )}
               <hr className="my-4" />
               <h3 className="text-xl font-bold mb-3">Photos</h3>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">

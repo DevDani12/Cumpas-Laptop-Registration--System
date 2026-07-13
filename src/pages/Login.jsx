@@ -44,10 +44,18 @@ const Login = () => {
     return (
         <div className="min-h-screen flex items-center justify-center bg-slate-100">
             <div className="bg-white shadow-xl rounded-xl p-8 w-full max-w-md">
-                <h1 className="text-3xl font-bold text-center text-slate-800 mb-2">
-                    {t("campusSecurity")}
-                </h1>
-                <p className="text-center text-gray-500 mb-8">
+                <div className="flex flex-col items-center mb-6">
+                    <div className="w-20 h-20 bg-slate-100 rounded-full flex items-center justify-center mb-3 overflow-hidden">
+                        <img src="/images/college-logo.png" alt="Nefas Silk Polytechnic College" className="w-full h-full object-contain" />
+                    </div>
+                    <h1 className="text-xl font-bold text-center text-slate-800">
+                        Nefas Silk Polytechnic College
+                    </h1>
+                    <p className="text-sm text-gray-500 text-center mt-1">
+                        ንፋስ ስልክ ፖሊቴክኒክ ኮሌጅ
+                    </p>
+                </div>
+                <p className="text-center text-gray-500 mb-6">
                     {t("guardLogin")}
                 </p>
 
@@ -60,7 +68,7 @@ const Login = () => {
                             value={formData.email}
                             onChange={handleChange}
                             placeholder={t("emailPlaceholder")}
-                            className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                            className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-500"
                             required
                         />
                     </div>
@@ -73,7 +81,7 @@ const Login = () => {
                             value={formData.password}
                             onChange={handleChange}
                             placeholder="********"
-                            className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                            className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary-500"
                             required
                         />
                     </div>
@@ -81,7 +89,7 @@ const Login = () => {
                     <button
                         disabled={loading}
                         type="submit"
-                        className="w-full bg-emerald-600 text-white py-3 rounded-lg font-semibold hover:bg-emerald-700 disabled:bg-gray-400"
+                        className="w-full bg-primary-600 text-white py-3 rounded-lg font-semibold hover:bg-primary-700 disabled:bg-gray-400"
                     >
                         {loading ? t("loggingIn") : t("login")}
                     </button>

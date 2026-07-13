@@ -48,6 +48,7 @@ const History = () => {
                   <th className="text-left px-6 py-4 font-semibold text-slate-600">{t("brandLabel")}</th>
                   <th className="text-left px-6 py-4 font-semibold text-slate-600">{t("modelLabel")}</th>
                   <th className="text-left px-6 py-4 font-semibold text-slate-600">{t("serialNumber")}</th>
+                  <th className="text-left px-6 py-4 font-semibold text-slate-600">{t("qrCode")}</th>
                   <th className="text-left px-6 py-4 font-semibold text-slate-600">{t("registeredAt")}</th>
                 </tr>
               </thead>
@@ -55,13 +56,30 @@ const History = () => {
                 {records.map((record, index) => (
                   <tr key={record._id || index} className="hover:bg-slate-50 transition-colors">
                     <td className="px-6 py-4">
-                      <span className="capitalize bg-emerald-100 text-emerald-800 text-xs font-semibold px-2.5 py-1 rounded-full">{record.role}</span>
+                      <span className="capitalize bg-primary-100 text-primary-800 text-xs font-semibold px-2.5 py-1 rounded-full">{record.role}</span>
                     </td>
                     <td className="px-6 py-4 font-medium text-slate-800">{record.ownerId}</td>
                     <td className="px-6 py-4 text-slate-600">{record.ownerName}</td>
                     <td className="px-6 py-4 text-slate-600">{record.brand}</td>
                     <td className="px-6 py-4 text-slate-600">{record.model}</td>
                     <td className="px-6 py-4 font-mono text-xs text-slate-500">{record.serialNumber}</td>
+                    <td className="px-6 py-4">
+                      {record.qrCodeUrl ? (
+                        <button
+                          onClick={() => {
+                            const link = document.createElement("a");
+                            link.href = record.qrCodeUrl;
+                            link.download = `QR-${record.serialNumber}.png`;
+                            link.click();
+                          }}
+                          className="bg-primary-600 hover:bg-primary-700 text-white text-xs font-medium px-3 py-1.5 rounded-lg transition-colors"
+                        >
+                          {t("downloadQR")}
+                        </button>
+                      ) : (
+                        <span className="text-slate-400 text-xs">-</span>
+                      )}
+                    </td>
                     <td className="px-6 py-4 text-slate-500">
                       {record.createdAt ? new Date(record.createdAt).toLocaleString() : "-"}
                     </td>

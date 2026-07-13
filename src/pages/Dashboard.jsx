@@ -26,8 +26,8 @@ const Dashboard = () => {
 
   const stats = data
     ? [
-        { title: t("totalLaptops"), count: data.totalLaptops, change: `+${data.todayRegistrations} ${t("today")}`, color: "border-emerald-500", icon: "💻" },
-        { title: t("verifiedToday"), count: data.todayVerifications, change: t("activeChecking"), color: "border-emerald-500", icon: "✅" },
+        { title: t("totalLaptops"), count: data.totalLaptops, change: `+${data.todayRegistrations} ${t("today")}`, color: "border-primary-500", icon: "💻" },
+        { title: t("verifiedToday"), count: data.todayVerifications, change: t("activeChecking"), color: "border-primary-500", icon: "✅" },
         { title: t("pendingFlags"), count: data.pendingRegistrations, change: t("requiresAttention"), color: "border-amber-500", icon: "⚠️" },
       ]
     : [];
@@ -56,7 +56,7 @@ const Dashboard = () => {
         <div>
           <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">{t("dashboardTitle")}</h1>
           <p className="text-slate-500 mt-1 flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span className="h-2 w-2 rounded-full bg-primary-500 animate-pulse"></span>
             {t("welcomeBack")} <span className="font-semibold text-slate-700">{t("securityGuard")}</span>
           </p>
         </div>
@@ -96,7 +96,7 @@ const Dashboard = () => {
                   <div className="text-right flex flex-col items-end">
                     <span className="text-xs font-semibold text-slate-400">{timeAgo(activity.time)}</span>
                     <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full mt-1 ${
-                      activity.status === "Success" ? "bg-emerald-50 text-emerald-700" : "bg-red-50 text-red-700"
+                      activity.status === "Success" ? "bg-primary-50 text-primary-700" : "bg-red-50 text-red-700"
                     }`}>{activity.status}</span>
                   </div>
                 </div>
@@ -109,7 +109,7 @@ const Dashboard = () => {
           <div>
             <h2 className="text-lg font-bold text-slate-900 mb-4">{t("quickActions")}</h2>
             <div className="space-y-3">
-              <button onClick={() => navigate("/verify")} className="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-medium py-3 px-4 rounded-lg text-sm transition transition-colors duration-150 flex items-center justify-center gap-2">
+              <button onClick={() => navigate("/verify")} className="w-full bg-primary-700 hover:bg-primary-800 text-white font-medium py-3 px-4 rounded-lg text-sm transition transition-colors duration-150 flex items-center justify-center gap-2">
                 🔎 {t("scanVerify")}
               </button>
               <button onClick={() => navigate("/register")} className="w-full bg-white hover:bg-slate-50 text-slate-700 font-medium py-3 px-4 rounded-lg text-sm border border-slate-200 transition transition-colors duration-150 flex items-center justify-center gap-2">

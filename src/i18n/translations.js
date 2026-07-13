@@ -116,6 +116,8 @@ const translations = {
     ownerIdLabel: "Owner ID",
     ownerNameLabel: "Owner Name",
     registeredAt: "Registered At",
+    qrCode: "QR Code",
+    downloadQR: "Download QR",
     failedLoadHistory: "Failed to load history",
 
     // Errors
@@ -240,6 +242,8 @@ const translations = {
     ownerIdLabel: "የባለቤት መታወቂያ",
     ownerNameLabel: "የባለቤት ስም",
     registeredAt: "የተመዘገበበት ቀን",
+    qrCode: "QR ኮድ",
+    downloadQR: "QR አውርድ",
     failedLoadHistory: "ታሪክ መጫን አልተሳካም",
 
     // Errors

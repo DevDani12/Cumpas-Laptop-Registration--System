@@ -89,7 +89,7 @@ const Register = () => {
                 type="button"
                 onClick={() => switchRole(r)}
                 className={`px-5 py-2.5 rounded-lg font-semibold capitalize transition ${
-                  role === r ? "bg-emerald-600 text-white shadow" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                  role === r ? "bg-primary-600 text-white shadow" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
               >
                 {t(r)}
@@ -136,7 +136,7 @@ const Register = () => {
           </div>
         </section>
 
-        <button disabled={loading} className="bg-emerald-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-emerald-700 disabled:bg-gray-400">
+        <button disabled={loading} className="bg-primary-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-primary-700 disabled:bg-gray-400">
           {loading ? t("registering") : t("registerButton")}
         </button>
       </form>
