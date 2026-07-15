@@ -118,6 +118,7 @@ const translations = {
     registeredAt: "Registered At",
     qrCode: "QR Code",
     downloadQR: "Download QR",
+    downloadCSV: "Download CSV",
     failedLoadHistory: "Failed to load history",
 
     // Errors
@@ -244,6 +245,7 @@ const translations = {
     registeredAt: "የተመዘገበበት ቀን",
     qrCode: "QR ኮድ",
     downloadQR: "QR አውርድ",
+    downloadCSV: "CSV አውርድ",
     failedLoadHistory: "ታሪክ መጫን አልተሳካም",
 
     // Errors

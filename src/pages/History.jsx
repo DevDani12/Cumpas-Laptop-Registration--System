@@ -30,6 +30,28 @@ const History = () => {
           <h1 className="text-3xl font-extrabold tracking-tight text-slate-900">{t("historyTitle")}</h1>
           <p className="text-slate-500 mt-1">{t("historyDesc")}</p>
         </div>
+        <button
+          onClick={async () => {
+            try {
+              const response = await api.get("/laptops/export/csv", { responseType: "text" });
+              const blob = new Blob([response.data], { type: "text/csv;charset=utf-8" });
+              const url = window.URL.createObjectURL(blob);
+              const link = document.createElement("a");
+              link.href = url;
+              link.download = `laptops-export-${Date.now()}.csv`;
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+              window.URL.revokeObjectURL(url);
+            } catch (err) {
+              const msg = err.response?.data?.message || err.message || t("failedLoadHistory");
+              toast.error(msg);
+            }
+          }}
+          className="bg-green-600 hover:bg-green-700 text-white text-sm font-medium px-5 py-2.5 rounded-lg transition-colors shadow-sm"
+        >
+          {t("downloadCSV")}
+        </button>
       </div>
 
       <div className="bg-white rounded-xl shadow-sm border border-slate-200/80 overflow-hidden">
