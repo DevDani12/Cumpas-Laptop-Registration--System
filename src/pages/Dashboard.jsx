@@ -26,9 +26,9 @@ const Dashboard = () => {
 
   const stats = data
     ? [
-        { title: t("totalLaptops"), count: data.totalLaptops, change: `+${data.todayRegistrations} ${t("today")}`, color: "border-primary-500", icon: "💻" },
-        { title: t("verifiedToday"), count: data.todayVerifications, change: t("activeChecking"), color: "border-primary-500", icon: "✅" },
-        { title: t("pendingFlags"), count: data.pendingRegistrations, change: t("requiresAttention"), color: "border-amber-500", icon: "⚠️" },
+        { title: t("totalLaptops"), count: data.totalLaptops, change: `+${data.todayRegistrations} ${t("today")}`, color: "border-primary-500", icon: "/images/laptop.png" },
+        { title: t("verifiedToday"), count: data.todayVerifications, change: t("activeChecking"), color: "border-primary-500", icon: "/images/check.png" },
+        { title: t("pendingFlags"), count: data.pendingRegistrations, change: t("requiresAttention"), color: "border-amber-500", icon: "/images/expired.png" },
       ]
     : [];
 
@@ -73,7 +73,13 @@ const Dashboard = () => {
               <h3 className="text-3xl font-bold text-slate-900 mt-2">{stat.count}</h3>
               <p className="text-xs text-slate-500 mt-1">{stat.change}</p>
             </div>
-            <div className="text-2xl bg-slate-50 p-2.5 rounded-lg">{stat.icon}</div>
+            <div className="text-2xl bg-slate-50 p-2.5 rounded-lg w-12 h-12 flex items-center justify-center">
+              {stat.icon.startsWith("/") ? (
+                <img src={stat.icon} alt="" className="w-7 h-7 object-contain" />
+              ) : (
+                stat.icon
+              )}
+            </div>
           </div>
         ))}
       </div>

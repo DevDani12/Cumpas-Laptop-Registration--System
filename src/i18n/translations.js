@@ -9,6 +9,7 @@ const translations = {
     registerLaptop: "Register Laptop",
     verifyLaptop: "Verify Laptop",
     history: "History",
+    auditLog: "Audit Log",
     logout: "Logout",
 
     // DashboardLayout
@@ -121,6 +122,22 @@ const translations = {
     downloadCSV: "Download CSV",
     failedLoadHistory: "Failed to load history",
 
+    // Audit Log
+    auditTitle: "Audit Log",
+    auditDesc: "View all verification activities and attempts",
+    time: "Time",
+    guardLabel: "Guard",
+    method: "Method",
+    manualSearch: "Manual Search",
+    allStatuses: "All Statuses",
+    allMethods: "All Methods",
+    noLogs: "No audit logs found.",
+    failedLoadLogs: "Failed to load audit logs",
+    showing: "Showing",
+    of: "of",
+    prev: "Previous",
+    next: "Next",
+
     // Errors
     failedLoadDashboard: "Failed to load dashboard",
     enterSearchValue: "Enter search value",
@@ -136,6 +153,7 @@ const translations = {
     registerLaptop: "ላፕቶፕ መመዝገቢያ",
     verifyLaptop: "ላፕቶፕ ማረጋገጫ",
     history: "ታሪክ",
+    auditLog: "የምርመራ ምዝግብ",
     logout: "ዘግተህ ውጣ",
 
     // DashboardLayout
@@ -247,6 +265,22 @@ const translations = {
     downloadQR: "QR አውርድ",
     downloadCSV: "CSV አውርድ",
     failedLoadHistory: "ታሪክ መጫን አልተሳካም",
+
+    // Audit Log
+    auditTitle: "የምርመራ ምዝግብ",
+    auditDesc: "ሁሉንም የማረጋገጫ እንቅስቃሴዎች ይመልከቱ",
+    time: "ሰዓት",
+    guardLabel: "ጠባቂ",
+    method: "ዘዴ",
+    manualSearch: "በእጅ ፍለጋ",
+    allStatuses: "ሁሉም ሁኔታዎች",
+    allMethods: "ሁሉም ዘዴዎች",
+    noLogs: "ምንም የምርመራ ምዝግብ አልተገኘም።",
+    failedLoadLogs: "የምርመራ ምዝግብ መጫን አልተሳካም",
+    showing: "እያሳየ",
+    of: "ከ",
+    prev: "ቀዳሚ",
+    next: "ቀጣይ",
 
     // Errors
     failedLoadDashboard: "ዳሽቦርድ መጫን አልተሳካም",

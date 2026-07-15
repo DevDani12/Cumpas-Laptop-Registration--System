@@ -16,6 +16,7 @@ import Verify from "./pages/Verify";
 
 import History from "./pages/History";
 
+import AuditLog from "./pages/AuditLog";
 
 import ProtectedRoute from "./routes/ProtectedRoute";
 
@@ -114,6 +115,22 @@ element={
 }
 />
 
+<Route
+path="/audit"
+element={
+
+<ProtectedRoute>
+
+<DashboardLayout>
+
+<AuditLog/>
+
+</DashboardLayout>
+
+</ProtectedRoute>
+
+}
+/>
 
 
 </Routes>
