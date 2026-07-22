@@ -28,6 +28,7 @@ const Dashboard = () => {
     ? [
         { title: t("totalLaptops"), count: data.totalLaptops, change: `+${data.todayRegistrations} ${t("today")}`, color: "border-primary-500", icon: "/images/laptop.png" },
         { title: t("verifiedToday"), count: data.todayVerifications, change: t("activeChecking"), color: "border-primary-500", icon: "/images/check.png" },
+        { title: t("totalStockItems"), count: data.totalStockItems, change: `+${data.todayStockItems} ${t("today")}`, color: "border-violet-500", icon: "/images/check.png" },
         { title: t("pendingFlags"), count: data.pendingRegistrations, change: t("requiresAttention"), color: "border-amber-500", icon: "/images/expired.png" },
       ]
     : [];
@@ -65,7 +66,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
         {stats.map((stat, index) => (
           <div key={index} className={`bg-white p-6 rounded-xl shadow-sm border-l-4 ${stat.color} border border-slate-200/80 flex justify-between items-start transition-all duration-200 hover:shadow-md`}>
             <div>

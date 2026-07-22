@@ -6,7 +6,7 @@ const translations = {
 
     // Sidebar
     dashboard: "Dashboard",
-    registerLaptop: "Register Laptop",
+    registerLaptop: "Register",
     verifyLaptop: "Verify Laptop",
     history: "History",
     auditLog: "Audit Log",
@@ -51,7 +51,10 @@ const translations = {
     guardAccessOnly: "Security Guard Access Only",
 
     // Register
+    registerLaptopTab: "Laptop",
+    registerStockTab: "Stock",
     registerTitle: "Register Laptop",
+    stockTitle: "Register Stock Item",
     registrantType: "Registrant Type",
     student: "Student",
     trainer: "Trainer",
@@ -89,6 +92,26 @@ const translations = {
     registerButton: "Register Laptop",
     successRegistered: "Laptop registered successfully",
     registrationFailed: "Registration failed",
+
+    // Stock
+    stockItemId: "Item ID",
+    stockItemName: "Item Name",
+    stockCategory: "Category",
+    stockQuantity: "Quantity",
+    stockSupplier: "Full Name",
+    stockDateReceived: "Date Received",
+    stockDescription: "Description (optional)",
+    stockDescriptionPlaceholder: "Optional notes about the item",
+    stockCategoryPlaceholder: "e.g. Charger, Battery, Bag, Keyboard",
+    stockRegisterButton: "Register Laptop Stock Item",
+    stockRegistering: "Registering...",
+    stockSuccessRegistered: "Laptop stock item registered successfully",
+    stockRegistrationFailed: "Stock registration failed",
+    stockList: "Laptop Stock Registry",
+    stockListDesc: "View all registered laptop stock items",
+    totalStockItems: "Total Laptop Stock Items",
+    stockItemsToday: "Laptop Stock Today",
+    noStockItems: "No laptop stock items registered yet",
 
     // Verify
     verifyTitle: "Verify Laptop",
@@ -138,6 +161,19 @@ const translations = {
     prev: "Previous",
     next: "Next",
 
+    // AI Chat
+    aiChat: "AI Assistant",
+    aiChatTitle: "AI Security Assistant",
+    aiChatDesc: "Ask questions about registered laptops using natural language",
+    aiPlaceholder: "Ask a question...",
+    aiSend: "Send",
+    aiThinking: "Analyzing your question...",
+    aiError: "Failed to get AI response",
+    aiExamples: "Try asking:",
+    aiEx1: "How many laptops are registered?",
+    aiEx2: "Find Dell laptops",
+    aiEx3: "Show all items for student ID STU001",
+
     // Errors
     failedLoadDashboard: "Failed to load dashboard",
     enterSearchValue: "Enter search value",
@@ -150,7 +186,7 @@ const translations = {
 
     // Sidebar
     dashboard: "ዳሽቦርድ",
-    registerLaptop: "ላፕቶፕ መመዝገቢያ",
+    registerLaptop: "መመዝገቢያ",
     verifyLaptop: "ላፕቶፕ ማረጋገጫ",
     history: "ታሪክ",
     auditLog: "የምርመራ ምዝግብ",
@@ -234,6 +270,29 @@ const translations = {
     successRegistered: "ላፕቶፕ በተሳካ ሁኔታ ተመዝግቧል",
     registrationFailed: "ምዝገባ አልተሳካም",
 
+    // Stock
+    registerLaptopTab: "ላፕቶፕ",
+    registerStockTab: "የላፕቶፕ እቃ",
+    stockTitle: "የላፕቶፕ እቃ ምዝገባ",
+    stockItemId: "የእቃ መታወቂያ",
+    stockItemName: "የእቃ ስም",
+    stockCategory: "ምድብ",
+    stockQuantity: "ብዛት",
+    stockSupplier: "ስም",
+    stockDateReceived: "የደረሰበት ቀን",
+    stockDescription: "ገለጻ (አማራጭ)",
+    stockDescriptionPlaceholder: "ስለ እቃው ማስታወሻ",
+    stockCategoryPlaceholder: "ለምሳሌ ቻርጀር፣ ባትሪ፣ ቦርሳ፣ ኪቦርድ",
+    stockRegisterButton: "የላፕቶፕ እቃ መዝግብ",
+    stockRegistering: "በመመዝገብ ላይ...",
+    stockSuccessRegistered: "የላፕቶፕ እቃ በተሳካ ሁኔታ ተመዝግቧል",
+    stockRegistrationFailed: "ምዝገባ አልተሳካም",
+    stockList: "የላፕቶፕ እቃ ምዝገባ ዝርዝር",
+    stockListDesc: "ሁሉንም የተመዘገቡ የላፕቶፕ እቃዎች ይመልከቱ",
+    totalStockItems: "ጠቅላላ የላፕቶፕ እቃዎች",
+    stockItemsToday: "ዛሬ የተመዘገቡ የላፕቶፕ እቃዎች",
+    noStockItems: "ገና ምንም የላፕቶፕ እቃ አልተመዘገበም",
+
     // Verify
     verifyTitle: "ላፕቶፕ ማረጋገጫ",
     serialNumberLabel: "ተከታታይ ቁጥር",
@@ -281,6 +340,19 @@ const translations = {
     of: "ከ",
     prev: "ቀዳሚ",
     next: "ቀጣይ",
+
+    // AI Chat
+    aiChat: "AI ረዳት",
+    aiChatTitle: "AI የደህንነት ረዳት",
+    aiChatDesc: "ስለ ተመዘገቡ ላፕቶፖች በተፈጥሮ ቋንቋ ጥያቄዎችን ይጠይቁ",
+    aiPlaceholder: "ጥያቄ ያስገቡ...",
+    aiSend: "ላክ",
+    aiThinking: "ጥያቄዎን እየመረመርኩ ነው...",
+    aiError: "የ AI ምላሽ ማግኘት አልተሳካም",
+    aiExamples: "እነዚህን ይሞክሩ:",
+    aiEx1: "ስንት ላፕቶፖች ተመዝግበዋል?",
+    aiEx2: "Dell ላፕቶፖችን ፈልግ",
+    aiEx3: "የተማሪ መታወቂያ STU001 ሁሉንም እቃዎች አሳይ",
 
     // Errors
     failedLoadDashboard: "ዳሽቦርድ መጫን አልተሳካም",

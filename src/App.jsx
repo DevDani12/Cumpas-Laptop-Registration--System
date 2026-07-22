@@ -8,6 +8,8 @@ from "react-router-dom";
 
 import Login from "./pages/Login";
 
+import VerifyQR from "./pages/VerifyQR";
+
 import Dashboard from "./pages/Dashboard";
 
 import Register from "./pages/Register";
@@ -17,6 +19,8 @@ import Verify from "./pages/Verify";
 import History from "./pages/History";
 
 import AuditLog from "./pages/AuditLog";
+
+import AiChat from "./pages/AiChat";
 
 import ProtectedRoute from "./routes/ProtectedRoute";
 
@@ -40,6 +44,10 @@ path="/login"
 element={<Login/>}
 />
 
+<Route
+path="/verify-qr/:id"
+element={<VerifyQR/>}
+/>
 
 
 <Route
@@ -124,6 +132,23 @@ element={
 <DashboardLayout>
 
 <AuditLog/>
+
+</DashboardLayout>
+
+</ProtectedRoute>
+
+}
+/>
+
+<Route
+path="/ai"
+element={
+
+<ProtectedRoute>
+
+<DashboardLayout>
+
+<AiChat/>
 
 </DashboardLayout>
 
